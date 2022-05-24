@@ -5,9 +5,12 @@ export const createVehicle = (data, user) => {
   return axios({
     method: 'POST',
     url: apiUrl + '/vehicles/',
-    // vehicle: { v_year: '2002', v_make: 'ford', v_model: 'Raptor'}
     data: {
-      vehicle: data
+      vehicle: {
+        v_year: data.vYear,
+        v_make: data.vMake,
+        v_model: data.vModel
+      }
     },
     headers: {
       Authorization: `Token ${user.token}`
@@ -18,7 +21,7 @@ export const createVehicle = (data, user) => {
 export const indexVehicles = (user) => {
   return axios({
     method: 'GET',
-    url: apiUrl + '/vehicles',
+    url: apiUrl + '/vehicles/',
     headers: {
       Authorization: `Token ${user.token}`
     }
@@ -45,14 +48,16 @@ export const deleteVehicle = (id, user) => {
   })
 }
 
-export const updateVehicle = (id, user, data) => {
+export const updateVehicle = (data, id, user) => {
+  console.log(data)
   return axios({
     method: 'PATCH',
-    url: apiUrl + '/vehicles/' + id,
+    url: apiUrl + '/vehicles/' + id + '/',
     data: {
       vehicle: {
-        title: data.title,
-        director: data.director
+        v_year: data.vYear,
+        v_make: data.vMake,
+        v_model: data.vModel
       }
     },
     headers: {

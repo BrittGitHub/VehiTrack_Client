@@ -7,9 +7,9 @@ class CreateVehicle extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      v_year: '',
-      v_make: '',
-      v_model: ''
+      vYear: '',
+      vMake: '',
+      vModel: ''
     }
   }
 
@@ -43,32 +43,32 @@ class CreateVehicle extends Component {
     render () {
       return (
         <Form onSubmit={this.handleSubmit}>
-          <Form.Group controlId='v_year'>
+          <Form.Group controlId='vYear'>
             <Form.Label>Vehicle Year</Form.Label>
             <Form.Control
               required
-              name='v_year'
-              value={this.state.v_year}
+              name='vYear'
+              value={this.state.vYear}
               placeholder='Vehicle Year'
               onChange={this.handleChange}
             />
           </Form.Group>
-          <Form.Group controlId='v_make'>
+          <Form.Group controlId='vMake'>
             <Form.Label>Vehicle Make</Form.Label>
             <Form.Control
               required
-              name='v_make'
-              value={this.state.v_make}
+              name='vMake'
+              value={this.state.vMake}
               placeholder='Vehicle Make'
               onChange={this.handleChange}
             />
           </Form.Group>
-          <Form.Group controlId='v_model'>
+          <Form.Group controlId='vModel'>
             <Form.Label>Vehicle Model</Form.Label>
             <Form.Control
               required
-              name='v_model'
-              value={this.state.v_model}
+              name='vModel'
+              value={this.state.vModel}
               placeholder='Vehicle Model'
               onChange={this.handleChange}
             />

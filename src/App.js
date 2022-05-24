@@ -11,6 +11,9 @@ import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import CreateVehicle from './components/vehicle/CreateVehicle'
+import ShowVehicle from './components/vehicle/ShowVehicle'
+import IndexVehicle from './components/vehicle/IndexVehicle'
+import UpdateVehicle from './components/vehicle/UpdateVehicle'
 
 class App extends Component {
   constructor (props) {
@@ -93,6 +96,27 @@ class App extends Component {
             render={() => (
               <CreateVehicle msgAlert={this.msgAlert} user={user} />
             )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            exact
+            path='/vehicles'
+            render={() => (
+              <IndexVehicle msgAlert={this.msgAlert} user={user} />
+            )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            exact
+            path='/vehicles/:id'
+            render={() => (
+              <ShowVehicle msgAlert={this.msgAlert} user={user} />
+            )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            path='/vehicles/:id/edit'
+            render={() => <UpdateVehicle msgAlert={this.msgAlert} user={user} />}
           />
         </main>
       </Fragment>
