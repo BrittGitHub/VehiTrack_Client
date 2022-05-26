@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/VehiTrack_Client/static/css/main.8a785abf.chunk.css",
-    "main.js": "/VehiTrack_Client/static/js/main.0396b73b.chunk.js",
-    "main.js.map": "/VehiTrack_Client/static/js/main.0396b73b.chunk.js.map",
+    "main.js": "/VehiTrack_Client/static/js/main.c1372aac.chunk.js",
+    "main.js.map": "/VehiTrack_Client/static/js/main.c1372aac.chunk.js.map",
     "runtime-main.js": "/VehiTrack_Client/static/js/runtime-main.cbc29969.js",
     "runtime-main.js.map": "/VehiTrack_Client/static/js/runtime-main.cbc29969.js.map",
     "static/js/2.23c554c5.chunk.js": "/VehiTrack_Client/static/js/2.23c554c5.chunk.js",
@@ -16,6 +16,6 @@
     "static/js/runtime-main.cbc29969.js",
     "static/js/2.23c554c5.chunk.js",
     "static/css/main.8a785abf.chunk.css",
-    "static/js/main.0396b73b.chunk.js"
+    "static/js/main.c1372aac.chunk.js"
   ]
 }
