@@ -12,8 +12,8 @@ class CreateMaintenance extends Component {
       type: '',
       date: '',
       cost: '',
-      notes: ''
-      // vehicleId: props.match.params.id
+      notes: '',
+      vehicleId: props.match.params.id
     }
   }
 
@@ -26,7 +26,6 @@ class CreateMaintenance extends Component {
       event.preventDefault()
 
       const { user, msgAlert, history, match } = this.props
-      console.log(user)
 
       createMaintenance(this.state, match.params.id, user)
         .then(() => history.push('/vehicles/' + match.params.id))
@@ -48,50 +47,52 @@ class CreateMaintenance extends Component {
 
     render () {
       return (
-        <Form onSubmit={this.handleSubmit}>
-          <Form.Group controlId='type'>
-            <Form.Label>Maintenance Type</Form.Label>
-            <Form.Control
-              required
-              name='type'
-              value={this.state.type}
-              placeholder='Maintenance type'
-              onChange={this.handleChange}
-            />
-          </Form.Group>
-          <Form.Group controlId='date'>
-            <Form.Label>Date</Form.Label>
-            <Form.Control
-              required
-              name='date'
-              type='date'
-              value={this.state.date}
-              placeholder='Add date here'
-              onChange={this.handleChange}
-            />
-          </Form.Group>
-          <Form.Group controlId='cost'>
-            <Form.Label>Cost</Form.Label>
-            <Form.Control
-              required
-              name='cost'
-              value={this.state.cost}
-              placeholder='Add cost here'
-              onChange={this.handleChange}
-            />
-          </Form.Group>
-          <Form.Group controlId='notes'>
-            <Form.Label>Notes</Form.Label>
-            <Form.Control
-              required
-              name='notes'
-              value={this.state.notes}
-              placeholder='Add notes here'
-              onChange={this.handleChange}
-            />
-          </Form.Group>
-          <Button type='submit'>Submit</Button>
-        </Form>
+        <div className='create-maintenance-form'>
+          <Form onSubmit={this.handleSubmit}>
+            <Form.Group controlId='type'>
+              <Form.Label>Maintenance Type</Form.Label>
+              <Form.Control
+                required
+                name='type'
+                value={this.state.type}
+                placeholder='Oil Change, Inspection, Repair, etc.'
+                onChange={this.handleChange}
+              />
+            </Form.Group>
+            <Form.Group controlId='date'>
+              <Form.Label>Date</Form.Label>
+              <Form.Control
+                required
+                name='date'
+                type='date'
+                value={this.state.date}
+                placeholder='Add date here'
+                onChange={this.handleChange}
+              />
+            </Form.Group>
+            <Form.Group controlId='cost'>
+              <Form.Label>Cost</Form.Label>
+              <Form.Control
+                required
+                name='cost'
+                value={this.state.cost}
+                placeholder='00.00'
+                onChange={this.handleChange}
+              />
+            </Form.Group>
+            <Form.Group controlId='notes'>
+              <Form.Label>Notes</Form.Label>
+              <Form.Control
+                required
+                name='notes'
+                value={this.state.notes}
+                placeholder='Maintenance Notes'
+                onChange={this.handleChange}
+              />
+            </Form.Group>
+            <Button type='submit'>Submit</Button>
+          </Form>
+        </div>
       )
     }
 }

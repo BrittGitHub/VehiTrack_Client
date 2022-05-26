@@ -7,8 +7,8 @@ const authenticatedOptions = (
   <Fragment>
     <NavLink to='/change-password' className='nav-link'>Change Password</NavLink>
     <NavLink to='/sign-out' className='nav-link'>Sign Out</NavLink>
-    <NavLink to='/create-vehicle' className='nav-link'>Add Vehicle</NavLink>
     <NavLink to='/vehicles' className='nav-link'>My Vehicles</NavLink>
+    <NavLink to='/create-vehicle' className='nav-link'>Add Vehicle</NavLink>
   </Fragment>
 )
 
@@ -19,16 +19,16 @@ const unauthenticatedOptions = (
   </Fragment>
 )
 
-const alwaysOptions = (
-  <Fragment>
-    <NavLink exact to='/' className='nav-link'>Home</NavLink>
-  </Fragment>
-)
+// const alwaysOptions = (
+//   <Fragment>
+//     <NavLink exact to='/' className='nav-link'>Home</NavLink>
+//   </Fragment>
+// )
 
 const Header = ({ user }) => (
-  <Navbar bg='primary' variant='dark' expand='md'>
+  <Navbar bg='dark' variant='dark' expand='md'>
     <Navbar.Brand>
-      <Link to='/' style={{ color: '#FFF', textDecoration: 'none' }}>VehiTrack</Link>
+      <Link to='/' style={{ color: '#7da453', textDecoration: 'none' }}>VehiTrack</Link>
     </Navbar.Brand>
     <Navbar.Toggle aria-controls='basic-navbar-nav' />
     <Navbar.Collapse id='basic-navbar-nav'>
@@ -36,7 +36,7 @@ const Header = ({ user }) => (
         {user && (
           <span className='navbar-text mr-2'>Welcome, {user.email}</span>
         )}
-        {alwaysOptions}
+        {/* {alwaysOptions} */}
         {user ? authenticatedOptions : unauthenticatedOptions}
       </Nav>
     </Navbar.Collapse>

@@ -55,10 +55,10 @@ class indexVehicle extends Component {
       ))
     }
     return (
-      <>
+      <div className='index-vehicles'>
         <h3>My Vehicles:</h3>
         <ul>{vehicleJSX}</ul>
-      </>
+      </div>
     )
   }
 }

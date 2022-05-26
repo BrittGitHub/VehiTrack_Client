@@ -51,4 +51,4 @@ To view a first draft wireframe of the app, [click here](/public/VehiTrack_Wiref
 * Display a totals section to show to total cost of maintenance per vehicle
 
 ## Setup and Installation
-To build more onto this app on your own, simply `fork` and `clone` this repository to your local environment. Then, start the site by running `npm start`. Your site is now running at http://localhost:8000!
+To build more onto this app on your own, simply `fork` and `clone` this repository to your local environment. Then, start the site by running `npm start`. Your site is now running at `http://localhost:7165`!

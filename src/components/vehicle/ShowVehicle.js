@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import { deleteVehicle, showVehicle } from '../../api/vehicle'
 import Button from 'react-bootstrap/Button'
-// import { deleteMaintenance } from '../../api/maintenance'
 
 class ShowVehicle extends Component {
   constructor (props) {
@@ -61,64 +60,40 @@ class ShowVehicle extends Component {
         })
     }
 
-    // handleDeleteMaintenance = (/* maintenanceId */) => {
-    //   const { match, user, msgAlert, history } = this.props
-
-    //   deleteMaintenance(match.params.id, /* maintenanceId, */ user)
-    //     .then(() => history.push('/vehicles'))
-    //     .then(() => {
-    //       msgAlert({
-    //         heading: 'Deleted maintenance successfully',
-    //         message: 'Maintenance deleted',
-    //         variant: 'success'
-    //       })
-    //     })
-    //     .catch((error) => {
-    //       msgAlert({
-    //         heading: 'Failed to delete maintenance!',
-    //         message: 'Maintenance delete error: ' + error.message,
-    //         variant: 'danger'
-    //       })
-    //     })
-    // }
-
     render () {
       if (this.state.vehicle === null) {
         return 'Loading...'
       }
 
-      const { vYear, vMake, vModel, /* maintenances, */ owner } = this.state.vehicle
+      const { vYear, vMake, vModel, owner } = this.state.vehicle
       const { user, history, match } = this.props
-      // const maintenancesJSX = []
 
       return (
-        <>
-          <h4>Model: {vModel}</h4>
+        <div className="show-vehicle">
+          <h4>{vModel}</h4>
           <p>Year: {vYear}</p>
           <p>Make: {vMake}</p>
           {user._id === owner && (
             <>
-              <Button onClick={this.handleDelete}>Delete Vehicle</Button>
-              <Button onClick={() => history.push(`/vehicles/${match.params.id}/edit`)}>Update Vehicle</Button>
+              <Button variant='dark'
+                onClick={this.handleDelete}>Delete Vehicle</Button>
+              <Button variant='dark'
+                onClick={() => history.push(`/vehicles/${match.params.id}/edit`)}>Update Vehicle</Button>
             </>
           )}
-          <Button
+          <Button variant='dark'
             onClick={() =>
               history.push(`/vehicles/${match.params.id}/create-maintenance`)
             }>
             Add Maintenance Memo
           </Button>
-          <Button
+          {/* <Button variant='dark'
             onClick={() =>
               history.push(`/vehicles/${match.params.id}/maintenances`)
-            }>
             Show All Maintenance Memos
-          </Button>
-          {/* <h3>Maintenance:</h3>
-          maintenancesJSX.push(
-          <p>{ maintenances.type } </p>)
-          {maintenancesJSX} */}
-        </>
+          </Button> */}
+
+        </div>
       )
     }
 }

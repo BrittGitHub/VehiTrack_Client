@@ -49,7 +49,6 @@ export const deleteVehicle = (id, user) => {
 }
 
 export const updateVehicle = (data, id, user) => {
-  console.log(data)
   return axios({
     method: 'PATCH',
     url: apiUrl + '/vehicles/' + id + '/',

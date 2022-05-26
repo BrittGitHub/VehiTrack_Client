@@ -11,7 +11,7 @@ class indexMaintenance extends Component {
       cost: '',
       date: '',
       notes: '',
-      vehicle: this.props.match.params.id,
+      vehicleId: props.match.params.id,
       maintenanceId: props.match.params.maintenanceId
     }
   }
@@ -43,7 +43,7 @@ class indexMaintenance extends Component {
   }
 
   render () {
-    const { maintenances } = this.state
+    const { maintenances, vehicle } = this.state
 
     if (maintenances === null) {
       return 'Loading...'
@@ -55,7 +55,7 @@ class indexMaintenance extends Component {
     } else {
       maintenanceJSX = maintenances.map((maintenance) => (
         <li key={maintenance.id}>
-          <Link to={`/maintenances/${maintenance.id}`}>{maintenance.type}</Link>
+          <Link to={`/vehicles/${vehicle.id}/maintenances/${maintenance.id}`}>{maintenance.type}</Link>
         </li>
       ))
     }
