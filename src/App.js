@@ -16,6 +16,7 @@ import IndexVehicle from './components/vehicle/IndexVehicle'
 import UpdateVehicle from './components/vehicle/UpdateVehicle'
 import CreateMaintenance from './components/maintenance/CreateMaintenance'
 // import IndexMaintenances from './components/maintenance/IndexMaintenances'
+import HomePage from './components/auth/HomePage'
 
 class App extends Component {
   constructor (props) {
@@ -72,6 +73,17 @@ class App extends Component {
             path='/sign-in'
             render={() => (
               <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
+            )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            exact path='/'
+            render={() => (
+              <HomePage
+                msgAlert={this.msgAlert}
+                clearUser={this.clearUser}
+                user={user}
+              />
             )}
           />
           <AuthenticatedRoute

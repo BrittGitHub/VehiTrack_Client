@@ -54,7 +54,7 @@ render () {
 
   return (
     <div className='row'>
-      <div className='col-sm-10 col-md-8 mx-auto mt-5'>
+      <div className='col-sm-10 col-md-8 mx-auto mt-5 sign-up'>
         <h3>Sign Up</h3>
         <Form onSubmit={this.onSignUp}>
           <Form.Group controlId='email'>
