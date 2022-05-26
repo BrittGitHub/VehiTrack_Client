@@ -1,6 +1,6 @@
 let apiUrl
 const apiUrls = {
-  production: 'https://brittgithub.github.io/VehiTrack_Client/',
+  production: 'https://brittgithub.github.io/VehiTrack_Client',
   development: 'http://localhost:8000'
 }
 
