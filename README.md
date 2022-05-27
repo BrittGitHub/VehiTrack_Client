@@ -3,11 +3,11 @@ Trying to find an easy way to track all of your household vehicles' maintenance 
 
 ## Deployed Application
 
-[Link]() to deployed application
+[Link](https://brittgithub.github.io/VehiTrack_Client/) to deployed application
 
 [Link](https://github.com/BrittGitHub/VehiTrack_Backend) to API repository
 
-[Link]() to API remote server
+[Link](https://vehitrack-backend.herokuapp.com/) to API remote server
 
 ## User Stories
 * As a user, I want to be able to create an account
