@@ -15,7 +15,7 @@ import ShowVehicle from './components/vehicle/ShowVehicle'
 import IndexVehicle from './components/vehicle/IndexVehicle'
 import UpdateVehicle from './components/vehicle/UpdateVehicle'
 import CreateMaintenance from './components/maintenance/CreateMaintenance'
-// import IndexMaintenances from './components/maintenance/IndexMaintenances'
+import IndexMaintenances from './components/maintenance/IndexMaintenances'
 import HomePage from './components/auth/HomePage'
 
 class App extends Component {
@@ -139,13 +139,13 @@ class App extends Component {
               <CreateMaintenance msgAlert={this.msgAlert} user={user} />
             )}
           />
-          {/* <AuthenticatedRoute
+          <AuthenticatedRoute
             user={user}
-            path='/vehicles/:id/maintenances/:maintenanceId'
+            path='/vehicles/:id/maintenances'
             render={() => (
               <IndexMaintenances msgAlert={this.msgAlert} user={user} />
             )}
-          /> */}
+          />
         </main>
       </Fragment>
     )

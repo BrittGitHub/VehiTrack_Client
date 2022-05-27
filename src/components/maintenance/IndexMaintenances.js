@@ -1,28 +1,26 @@
 import React, { Component } from 'react'
 import { indexMaintenances } from '../../api/maintenance'
-import { Link } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
-class indexMaintenance extends Component {
+class IndexMaintenance extends Component {
   constructor (props) {
     super(props)
 
     this.state = {
-      type: '',
-      cost: '',
-      date: '',
-      notes: '',
-      vehicleId: props.match.params.id,
-      maintenanceId: props.match.params.maintenanceId
+      maintenances: null
     }
+
+    this.vehicleId = props.match.params.id
   }
 
   componentDidMount () {
     const { user, msgAlert } = this.props
-
-    indexMaintenances(this.state.vehicle, user)
+    indexMaintenances(this.vehicleId, user)
       .then((res) => {
+        // console.log('vehicle id = ' + this.vehicleId)
+        // console.log('response = ' + res)
         return res.data.maintenances.filter((maintenance) =>
-          maintenance.vehicle_id === this.state.vehicle
+          maintenance.vehicle === Number(this.vehicleId)
         )
       })
       .then((filteredRes) => this.setState({ maintenances: filteredRes }))
@@ -43,11 +41,13 @@ class indexMaintenance extends Component {
   }
 
   render () {
-    const { maintenances, vehicle } = this.state
+    const { maintenances } = this.state
 
     if (maintenances === null) {
       return 'Loading...'
     }
+
+    // console.log('maintenances= ' + JSON.stringify(maintenances))
 
     let maintenanceJSX
     if (maintenances.length === 0) {
@@ -55,7 +55,8 @@ class indexMaintenance extends Component {
     } else {
       maintenanceJSX = maintenances.map((maintenance) => (
         <li key={maintenance.id}>
-          <Link to={`/vehicles/${vehicle.id}/maintenances/${maintenance.id}`}>{maintenance.type}</Link>
+          {/* <Link to={`/vehicles/${this.vehicleId}/maintenances/${maintenance.id}`}>{maintenance.type}</Link> */}
+          <div>{maintenance.type}    {maintenance.cost}    {maintenance.date}</div>
         </li>
       ))
     }
@@ -68,4 +69,4 @@ class indexMaintenance extends Component {
   }
 }
 
-export default indexMaintenance
+export default withRouter(IndexMaintenance)

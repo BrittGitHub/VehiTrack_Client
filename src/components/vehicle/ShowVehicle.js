@@ -87,12 +87,12 @@ class ShowVehicle extends Component {
             }>
             Add Maintenance Memo
           </Button>
-          {/* <Button variant='dark'
+          <Button variant='dark'
             onClick={() =>
               history.push(`/vehicles/${match.params.id}/maintenances`)
+            }>
             Show All Maintenance Memos
-          </Button> */}
-
+          </Button>
         </div>
       )
     }

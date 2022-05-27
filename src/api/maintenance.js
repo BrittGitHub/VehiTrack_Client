@@ -19,12 +19,12 @@ export const createMaintenance = (data, id, user) => {
   })
 }
 
-// export const indexMaintenances = (id, user) => {
-//   return axios({
-//     method: 'GET',
-//     url: apiUrl + '/vehicles/' + id + '/maintenances/',
-//     headers: {
-//       Authorization: `Token ${user.token}`
-//     }
-//   })
-// }
+export const indexMaintenances = (id, user) => {
+  return axios({
+    method: 'GET',
+    url: apiUrl + '/vehicles/' + id + '/maintenances/',
+    headers: {
+      Authorization: `Token ${user.token}`
+    }
+  })
+}
