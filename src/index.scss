@@ -33,11 +33,6 @@ body{
     left:0px;
     z-index:1000;
 }
-// .home-page-logo {
-//     margin-top: 50px;
-//       color: black;
-
-// }
 
 .btn {
     background-color: #387002;
@@ -67,7 +62,7 @@ body{
     padding-top: 10px
 }
 
-.add-vehicle-form{
+.forms {
     border: 3px solid black;
     margin: 20px auto;
     border-radius: 10px;
@@ -79,14 +74,9 @@ body{
     padding-right: 8px;
 }
 
-.create-maintenance-form {
-    border: 3px solid black;
-    margin: 20px auto;
-    border-radius: 10px;
-    border-color: grey;
-    text-align: left;
-    width: 90%;
-    align-self: center;
-    padding-left: 8px;
-    padding-right: 8px;
+a:visited {
+  color: green;
+}
+a:hover {
+  color: black;
 }

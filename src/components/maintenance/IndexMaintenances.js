@@ -26,8 +26,8 @@ class IndexMaintenance extends Component {
       .then((filteredRes) => this.setState({ maintenances: filteredRes }))
       .then(() => {
         msgAlert({
-          heading: 'Index My maintenances Success',
-          message: 'maintenances successfully shown!',
+          heading: 'Index maintenances Success',
+          message: 'Vehicle\'s maintenances successfully shown',
           variant: 'success'
         })
       })
@@ -55,14 +55,13 @@ class IndexMaintenance extends Component {
     } else {
       maintenanceJSX = maintenances.map((maintenance) => (
         <li key={maintenance.id}>
-          {/* <Link to={`/vehicles/${this.vehicleId}/maintenances/${maintenance.id}`}>{maintenance.type}</Link> */}
           <div>{maintenance.type}    {maintenance.cost}    {maintenance.date}</div>
         </li>
       ))
     }
     return (
       <>
-        <h3>My maintenances:</h3>
+        <h3>Maintenances:</h3>
         <ul>{maintenanceJSX}</ul>
       </>
     )

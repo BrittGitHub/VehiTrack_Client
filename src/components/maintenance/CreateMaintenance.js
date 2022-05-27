@@ -47,7 +47,7 @@ class CreateMaintenance extends Component {
 
     render () {
       return (
-        <div className='create-maintenance-form'>
+        <div className='forms'>
           <Form onSubmit={this.handleSubmit}>
             <Form.Group controlId='type'>
               <Form.Label>Maintenance Type</Form.Label>
@@ -90,7 +90,7 @@ class CreateMaintenance extends Component {
                 onChange={this.handleChange}
               />
             </Form.Group>
-            <Button type='submit'>Submit</Button>
+            <Button variant='dark' type='submit'>Submit</Button>
           </Form>
         </div>
       )

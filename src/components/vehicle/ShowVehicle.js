@@ -26,7 +26,7 @@ class ShowVehicle extends Component {
       .then(() => {
         msgAlert({
           heading: 'Show vehicle success',
-          message: 'Woot success',
+          message: 'Vehicle successfully shown',
           variant: 'success'
         })
       })

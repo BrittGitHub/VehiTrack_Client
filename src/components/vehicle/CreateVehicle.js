@@ -44,7 +44,7 @@ class CreateVehicle extends Component {
 
     render () {
       return (
-        <div className='add-vehicle-form'>
+        <div className='forms'>
           <Form
             onSubmit={this.handleSubmit}
           >

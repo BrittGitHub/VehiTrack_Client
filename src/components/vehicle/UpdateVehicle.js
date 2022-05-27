@@ -16,30 +16,14 @@ class UpdateVehicle extends Component {
   }
 
   componentDidMount () {
-    const { match, user, msgAlert } = this.props
+    const { match, user } = this.props
 
     showVehicle(match.params.id, user)
       .then(res => this.setState({
-        // vehicle: {
         vYear: res.data.vehicle.v_year,
         vMake: res.data.vehicle.v_make,
         vModel: res.data.vehicle.v_model
-        // }
       }))
-      .then(() => {
-        msgAlert({
-          heading: 'Show vehicle success',
-          message: 'Woot success',
-          variant: 'success'
-        })
-      })
-      .catch(error => {
-        msgAlert({
-          heading: 'Show failed',
-          message: 'Error message: ' + error.message,
-          variant: 'danger'
-        })
-      })
   }
 
     handleChange = (event) =>
@@ -57,7 +41,7 @@ class UpdateVehicle extends Component {
         .then(() => {
           msgAlert({
             heading: 'Updated Vehicle',
-            message: 'Woot updated',
+            message: 'Vehicle successfully updated updated',
             variant: 'success'
           })
         })
@@ -72,39 +56,41 @@ class UpdateVehicle extends Component {
 
     render () {
       return (
-        <Form onSubmit={this.handleSubmit}>
-          <Form.Group controlId='vYear'>
-            <Form.Label>Vehicle Year</Form.Label>
-            <Form.Control
-              required
-              name='vYear'
-              value={this.state.vYear}
-              placeholder='Vehicle Year'
-              onChange={this.handleChange}
-            />
-          </Form.Group>
-          <Form.Group controlId='vMake'>
-            <Form.Label>Vehicle Make</Form.Label>
-            <Form.Control
-              required
-              name='vMake'
-              value={this.state.vMake}
-              placeholder='Vehicle Make'
-              onChange={this.handleChange}
-            />
-          </Form.Group>
-          <Form.Group controlId='vModel'>
-            <Form.Label>Vehicle Model</Form.Label>
-            <Form.Control
-              required
-              name='vModel'
-              value={this.state.vModel}
-              placeholder='Vehicle Model'
-              onChange={this.handleChange}
-            />
-            <Button variant='primary' type='submit'>Submit</Button>
-          </Form.Group>
-        </Form>
+        <div className='forms'>
+          <Form onSubmit={this.handleSubmit}>
+            <Form.Group controlId='vYear'>
+              <Form.Label>Vehicle Year</Form.Label>
+              <Form.Control
+                required
+                name='vYear'
+                value={this.state.vYear}
+                placeholder='Vehicle Year'
+                onChange={this.handleChange}
+              />
+            </Form.Group>
+            <Form.Group controlId='vMake'>
+              <Form.Label>Vehicle Make</Form.Label>
+              <Form.Control
+                required
+                name='vMake'
+                value={this.state.vMake}
+                placeholder='Vehicle Make'
+                onChange={this.handleChange}
+              />
+            </Form.Group>
+            <Form.Group controlId='vModel'>
+              <Form.Label>Vehicle Model</Form.Label>
+              <Form.Control
+                required
+                name='vModel'
+                value={this.state.vModel}
+                placeholder='Vehicle Model'
+                onChange={this.handleChange}
+              />
+              <Button variant='dark' type='submit'>Submit</Button>
+            </Form.Group>
+          </Form>
+        </div>
       )
     }
 }
