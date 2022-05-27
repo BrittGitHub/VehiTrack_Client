@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/VehiTrack_Client/static/css/main.8a785abf.chunk.css",
-    "main.js": "/VehiTrack_Client/static/js/main.a3e0305a.chunk.js",
-    "main.js.map": "/VehiTrack_Client/static/js/main.a3e0305a.chunk.js.map",
+    "main.js": "/VehiTrack_Client/static/js/main.398bdbae.chunk.js",
+    "main.js.map": "/VehiTrack_Client/static/js/main.398bdbae.chunk.js.map",
     "runtime-main.js": "/VehiTrack_Client/static/js/runtime-main.cbc29969.js",
     "runtime-main.js.map": "/VehiTrack_Client/static/js/runtime-main.cbc29969.js.map",
-    "static/js/2.23c554c5.chunk.js": "/VehiTrack_Client/static/js/2.23c554c5.chunk.js",
-    "static/js/2.23c554c5.chunk.js.map": "/VehiTrack_Client/static/js/2.23c554c5.chunk.js.map",
+    "static/js/2.83473734.chunk.js": "/VehiTrack_Client/static/js/2.83473734.chunk.js",
+    "static/js/2.83473734.chunk.js.map": "/VehiTrack_Client/static/js/2.83473734.chunk.js.map",
     "index.html": "/VehiTrack_Client/index.html",
     "static/css/main.8a785abf.chunk.css.map": "/VehiTrack_Client/static/css/main.8a785abf.chunk.css.map",
-    "static/js/2.23c554c5.chunk.js.LICENSE.txt": "/VehiTrack_Client/static/js/2.23c554c5.chunk.js.LICENSE.txt",
+    "static/js/2.83473734.chunk.js.LICENSE.txt": "/VehiTrack_Client/static/js/2.83473734.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/VehiTrack_Client/static/media/Car_Warning_Lights-11.e5286514.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.cbc29969.js",
-    "static/js/2.23c554c5.chunk.js",
+    "static/js/2.83473734.chunk.js",
     "static/css/main.8a785abf.chunk.css",
-    "static/js/main.a3e0305a.chunk.js"
+    "static/js/main.398bdbae.chunk.js"
   ]
 }
